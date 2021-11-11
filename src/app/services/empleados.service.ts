@@ -21,7 +21,7 @@ export class EmpleadosService {
 
   crearEmpleado(empleado: Empleado)
   {
-    this.mostrarMensajeService.muestraMensaje(`Se da de alta el empleado 
+    this.mostrarMensajeService.muestraMensaje(`Se da de alta el empleado de nombre
           ${empleado.nombre} ${empleado.apellido}  y con el cargo ${empleado.cargo}`);
     
     this.empleados.push(empleado);
