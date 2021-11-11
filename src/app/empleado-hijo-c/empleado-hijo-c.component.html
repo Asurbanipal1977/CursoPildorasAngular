@@ -1,0 +1,13 @@
+<div class="container mt-3">
+    <div class="row">
+        <div class="col">
+            <div>
+                {{indice+1}} - {{ElemEmpleado.nombre}}  {{ElemEmpleado.apellido}} {{ElemEmpleado.cargo}} {{ElemEmpleado.salario}}
+            </div>
+            <ul class="list-group">
+                <li class="list-group-item" *ngFor="let caracteristica of caracteristicas">{{caracteristica}}</li>
+            </ul>
+            <app-caracteristicas-empleado-c (caracteristicasEmpleado)="anadirCaracteristica($event)"></app-caracteristicas-empleado-c>
+        </div>
+    </div>
+ </div>
