@@ -12,7 +12,8 @@ export class EmpleadosService {
   private empleados: Empleado[] = [
     {nombre:"Pepe",apellido:"Sánchez",cargo:"Analista",salario:1500},
     {nombre:"David",apellido:"Pérez",cargo:"Programador",salario:1200},
-    {nombre:"Miguel Ángel",apellido:"Martínez Eusebio",cargo:"Programador",salario:1400}
+    {nombre:"Miguel Ángel",apellido:"Martínez Eusebio",cargo:"Programador",salario:1400},
+    {nombre:"Julián",apellido:"Pérez",cargo:"Programador",salario:1600}
   ];  
 
   listarEmpleados(): Empleado[]{
