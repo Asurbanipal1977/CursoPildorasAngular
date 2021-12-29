@@ -10,12 +10,14 @@ import { ProyectosComponent } from './proyectos/proyectos.component';
 import { QuienesComponent } from './quienes/quienes.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import { RouterModule, Routes } from '@angular/router';
+import { ActualizaComponent } from './actualiza/actualiza.component';
 
 const rutas: Routes=[
   {path:'',component: HomeComponent},
   {path:'proyectos',component: ProyectosComponent},
   {path:'quienes',component: QuienesComponent},
   {path:'contactos',component: ContactoComponent},
+  {path:'actualiza/:id',component: ActualizaComponent},
   {path:'**',redirectTo: ''},
 ];
 
@@ -27,7 +29,8 @@ const rutas: Routes=[
       HomeComponent,
       ProyectosComponent,
       QuienesComponent,
-      ContactoComponent
+      ContactoComponent,
+      ActualizaComponent
    ],
    imports: [
 	 BrowserModule,

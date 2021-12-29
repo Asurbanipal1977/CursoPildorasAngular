@@ -28,4 +28,17 @@ export class EmpleadosService {
     this.empleados.push(empleado);
   }
 
+  modificarEmpleado(empleado: Empleado, indice:number)
+  {
+    this.mostrarMensajeService.muestraMensaje(`Se modifica empleado de id ${indice} - ${empleado.nombre} ${empleado.apellido}  y con el cargo ${empleado.cargo}`);
+    
+    this.empleados[indice] = empleado;
+  }
+
+  eliminarEmpleado(indice:number)
+  {
+    this.mostrarMensajeService.muestraMensaje(`Se elimina empleado de id ${indice}`);
+    this.empleados.splice(indice,1);
+  }
+
 }
