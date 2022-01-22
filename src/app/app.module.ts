@@ -11,6 +11,7 @@ import { QuienesComponent } from './quienes/quienes.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import { RouterModule, Routes } from '@angular/router';
 import { ActualizaComponent } from './actualiza/actualiza.component';
+import { ErrorComponent } from './error/error.component';
 
 const rutas: Routes=[
   {path:'',component: HomeComponent},
@@ -18,7 +19,7 @@ const rutas: Routes=[
   {path:'quienes',component: QuienesComponent},
   {path:'contactos',component: ContactoComponent},
   {path:'actualiza/:id',component: ActualizaComponent},
-  {path:'**',redirectTo: ''},
+  {path:'**', component: ErrorComponent},
 ];
 
 @NgModule({

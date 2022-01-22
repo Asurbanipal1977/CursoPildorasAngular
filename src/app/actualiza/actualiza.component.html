@@ -3,29 +3,27 @@
       <div class="form-group col-auto">
         <label for="nombre" class="form-label">Nombre:</label>
         <input type="text" name="nombre" id="nombre" class="form-control" 
-        placeholder="Introduzca el nombre" [(ngModel)]="empleado.nombre">
+        placeholder="Introduzca el nombre" [(ngModel)]="empleado.nombre" [readonly]="readonly">
       </div>
       <div class="form-group col-auto">
         <label for="apellido" class="form-label">Apellido:</label>
         <input type="text" name="apellido" id="apellido" class="form-control" 
-        placeholder="Introduzca el apellido" [(ngModel)]="empleado.apellido">
+        placeholder="Introduzca el apellido" [(ngModel)]="empleado.apellido" [readonly]="readonly">
       </div>
       <div class="form-group col-auto">
         <label for="cargo" class="form-label">Cargo:</label>
         <input type="text" name="cargo" id="cargo" class="form-control" 
-        placeholder="Introduzca el cargo" [(ngModel)]="empleado.cargo">
+        placeholder="Introduzca el cargo" [(ngModel)]="empleado.cargo" [readonly]="readonly">
       </div>
       <div class="form-group col-auto">
         <label for="salario" class="form-label">Salario:</label>
         <input type="text" name="salario" id="salario" class="form-control" 
-        placeholder="Introduzca el salario" [(ngModel)]="empleado.salario">
+        placeholder="Introduzca el salario" [(ngModel)]="empleado.salario" [readonly]="readonly">
       </div>
       <div style="display:block"></div>
       <div class="form-group col-auto">
         <button type="button" class="btn btn-primary m-2"
-        (click)="modificarEmpleado()">Modificar Empleado</button>
-        <button type="button" class="btn btn-secondary m-2"
-        (click)="eliminarEmpleado()">Eliminar Empleado</button>
+        (click)="aceptarCambioEmpleado()">Aceptar</button>
       </div>
     </div>
   </form>

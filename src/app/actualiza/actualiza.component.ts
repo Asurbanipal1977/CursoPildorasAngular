@@ -3,6 +3,11 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Empleado } from '../empleado.model';
 import { EmpleadosService } from '../services/empleados.service';
 
+enum EnumAccion {
+  Mod = 1,
+  Elim = 2
+};
+
 @Component({
   selector: 'app-actualiza',
   templateUrl: './actualiza.component.html',
@@ -15,6 +20,12 @@ export class ActualizaComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.accion = this.activateRoute.snapshot.queryParams['accion'];
+    if (this.accion==EnumAccion.Elim.toString())
+    {
+      this.readonly="readonly";
+    }
+    
     this.indice = this.activateRoute.snapshot.params['id'];
     this.empleado=this.empleadosService.listarEmpleados()[this.indice]!;
   }
@@ -27,6 +38,8 @@ export class ActualizaComponent implements OnInit {
   empleado: Empleado = new Empleado("","","",0);
   empleados: Empleado[] = [];
   indice:number=0;
+  accion:string="";
+  readonly:string="";
 
   modificarEmpleado():void{
     this.empleadosService.modificarEmpleado(this.empleado, this.indice);
@@ -36,6 +49,16 @@ export class ActualizaComponent implements OnInit {
   eliminarEmpleado():void{
     this.empleadosService.eliminarEmpleado(this.indice);
     this.router.navigate(['']);
+  }
+
+  aceptarCambioEmpleado():void{
+    if (this.accion=='1')
+    {
+      this.modificarEmpleado();
+    }
+    else{
+      this.eliminarEmpleado();
+    }
   }
 
 
